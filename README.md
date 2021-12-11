@@ -1,5 +1,5 @@
 # log4j_CVE-2021-44228_tester
-Test for log4j vulnerability across your external footprint
+Test for the log4j vulnerability ( CVE-2021-44228 ) across your external footprint
 
 ## Example Use
 
@@ -22,5 +22,9 @@ You will need:
 
 <img width="973" alt="image" src="https://user-images.githubusercontent.com/774940/145664156-fee98504-0a18-427c-8213-5f3818864a9a.png">
 
+## False Positives
+If you use egress SSL decryption + inspection this script may trigger false positives (as your IDS may before lookups on the canary token.. thus triggering it).
+
+If this is the case then you are better off running it from a cloud instance that is not being inspected.
 
 
