@@ -32,10 +32,6 @@ Spin up a docker image of a vulnerable server:
 ```
 docker run --name vulnerable-app -p 555:8080 ghcr.io/christophetd/log4shell-vulnerable-app
 ```
-
-In your source file add:
-
-    localhost:555
     
 Modify the script for http:
 
