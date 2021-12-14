@@ -27,4 +27,27 @@ If you use egress SSL decryption + inspection this script may trigger false posi
 
 If this is the case then you are better off running it from a cloud instance that is not being inspected.
 
+## Local Testing
+Spin up a docker image of a vulnerable server:
+```
+docker run --name vulnerable-app -p 555:8080 ghcr.io/christophetd/log4shell-vulnerable-app
+```
+
+In your source file add:
+
+    localhost:555
+    
+Modify the script for http:
+
+```
+cp log4j_CVE-2021-44228_tester.sh log4j_CVE-2021-44228_tester_http.sh
+perl -pi -e 's|https|http|g' log4j_CVE-2021-44228_tester_http.sh
+perl -pi -e 's|HTTPS|HTTP|g' log4j_CVE-2021-44228_tester_http.sh
+```
+Use the new script to test locally:
+```
+echo "localhost:555" > ips.txt
+./log4j_CVE-2021-44228_tester_http.sh ips.txt <canary_domain>
+```
+
 
