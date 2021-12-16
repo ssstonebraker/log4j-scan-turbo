@@ -32,18 +32,11 @@ Spin up a docker image of a vulnerable server:
 ```
 docker run --name vulnerable-app -p 555:8080 ghcr.io/christophetd/log4shell-vulnerable-app
 ```
-    
-Modify the script for http:
-
-```
-cp log4j_CVE-2021-44228_tester.sh log4j_CVE-2021-44228_tester_http.sh
-perl -pi -e 's|https|http|g' log4j_CVE-2021-44228_tester_http.sh
-perl -pi -e 's|HTTPS|HTTP|g' log4j_CVE-2021-44228_tester_http.sh
-```
-Use the new script to test locally:
+ 
+Use the script to test locally:
 ```
 echo "localhost:555" > ips.txt
-./log4j_CVE-2021-44228_tester_http.sh ips.txt <canary_domain>
+./log4j_CVE-2021-44228_tester.sh ips.txt <canary_domain>
 ```
 
 
