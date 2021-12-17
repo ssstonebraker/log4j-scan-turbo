@@ -3,22 +3,16 @@ Accept-Datetime
 Accept-Encoding
 Accept-Language
 Authorization
-Authorization:
-Basic
-Authorization:
-Bearer
-Authorization:
-Oauth
-Authorization:
-Token
+Authorization: Basic
+Authorization: Bearer
+Authorization: Oauth
+Authorization: Token
 Cache-Control
 Cf-Connecting_ip
 Client-Ip
 Contact
 Cookie
-Cookie pair:
 DNT
-Forwarded
 Forwarded
 Forwarded-For
 Forwarded-For-Ip
