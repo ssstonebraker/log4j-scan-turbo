@@ -30,7 +30,7 @@ mkdir -p "${PWD}/report"
 touch $APEX_LOG_FILE
 
 if [ "$EUID" -ne 0 ]; then echo "Please run as with sudo or as root" && exit; fi
-if [ "$#" -ne 2 ]; then echo "Usage: " && echo "sudo ./log4j_CVE-2021-44228_tester.sh <INPUT_FILE> <CANARY_DOMAIN>" && exit; fi
+if [ "$#" -ne 2 ]; then echo "Usage: " && echo "sudo ./log4j-scan-turbo.sh <INPUT_FILE> <CANARY_DOMAIN>" && exit; fi
 if [ ! -f "$INPUTFILE" ]; then echo "file [$INPUTFILE] does not exist!  Exiting... " && exit; fi
 if [ ! -f "$FILE_HEADERS" ]; then echo "file [$FILE_HEADERS] does not exist!  Exiting... " && exit; fi
 
