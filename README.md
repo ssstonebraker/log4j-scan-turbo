@@ -1,13 +1,16 @@
 # log4j-scan-turbo (Multi-threaded scanner)
 Test for the log4j vulnerability ( CVE-2021-44228 ) across your external footprint.
 
+This is a very fast, multi-threaded, log4j vulnerability tester.
+
 ## Details
 
 - Pure bash scanner
 - Uses nohup and curl to achieve multiple threads
 - Curl configured to use a 3 second client to server maximum and six second total time setting.
-
-This is a very fast, multi-threaded, log4j vulnerability tester.
+- 48 parallel calls at a time
+- Covers all jndi protocols
+- HTTP GET/POST methods
 
 ## Example Use
 ```
