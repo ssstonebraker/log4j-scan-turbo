@@ -1,12 +1,21 @@
-# log4j_CVE-2021-44228_tester
+# log4j-scan-turbo (Multi-threaded scanner)
 Test for the log4j vulnerability ( CVE-2021-44228 ) across your external footprint.
+
+## Details
+
+- Pure bash scanner
+- Uses nohup and curl to achieve multiple threads
+- Curl configured to use a 3 second client to server maximum and six second total time setting.
 
 This is a very fast, multi-threaded, log4j vulnerability tester.
 
 ## Example Use
 ```
+git clone https://github.com/ssstonebraker/log4j-scan-turbo
+cd log4j-scan-turbo
 sudo ./log4j_CVE-2021-44228_tester.sh <INPUT_FILE> <CANARY_DOMAIN>
 ```
+
 ## Payloads
 ```
 Payloads:
@@ -27,8 +36,18 @@ You will need:
 1. An inputfile with a list of IP addresses/domains (one per line)
 2. A Canary Token (see below)
 
+### Input File
+Your input file should consist of IP address and/or Fully Qualified Domain Names
 
-## Get a Canary Domain 
+Example:
+```
+foo.com
+bar.com
+10.1.100.50
+127.0.0.1:5000
+```
+
+### Get a Canary Domain 
 1. Browse to https://canarytokens.org/generate#
 2. Selection Option "DNS"
 3. Input Email Address
@@ -51,7 +70,7 @@ docker run --name vulnerable-app -p 555:8080 ghcr.io/christophetd/log4shell-vuln
 Use the script to test locally:
 ```
 echo "localhost:555" > ips.txt
-./log4j_CVE-2021-44228_tester.sh ips.txt <canary_domain>
+sudo ./log4j-scan-turbo.sh ips.txt <canary_domain>
 ```
 
 
