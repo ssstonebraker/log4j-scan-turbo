@@ -1,11 +1,14 @@
 #!/bin/bash
 # Author: Steve Stonebraker
 # Date: 2021-12-16
-# Usage: ./log4j_CVE-2021-44228_tester.sh <INPUT_FILE> <CANARY_DOMAIN>
+# Usage: ./log4j-scan-turbo.sh <INPUT_FILE> <CANARY_DOMAIN>
 # Purpose:
 # This script will iterate through a list of IP Addresses/Domain Names and call
 # each one using curl on http/https and send a payload that will notify a DNS canary domain
 # (if the site is vulnerable to log4shell aka CVE-2021-44228)
+#
+# This scanner does 48 parallel curl with a connect timeout of 3 seconds and max time of six seconds
+#
 
 # shellcheck disable=SC3028 # $RANDOM variable is undefined.
 # shellcheck disable=SC2148 # shebang does not exist. because this script will work both "zsh" and "bash".
