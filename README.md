@@ -1,9 +1,11 @@
 # log4j_CVE-2021-44228_tester
-Test for the log4j vulnerability ( CVE-2021-44228 ) across your external footprint
+Test for the log4j vulnerability ( CVE-2021-44228 ) across your external footprint.
+
+This is a very fast, multi-threaded, log4j vulnerability tester.
 
 ## Example Use
 ```
-./log4j_CVE-2021-44228_tester.sh <INPUT_FILE> <CANARY_DOMAIN>
+sudo ./log4j_CVE-2021-44228_tester.sh <INPUT_FILE> <CANARY_DOMAIN>
 ```
 ## Payloads
 ```
