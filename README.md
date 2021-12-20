@@ -60,7 +60,7 @@ bar.com
 <img width="973" alt="image" src="https://user-images.githubusercontent.com/774940/145664156-fee98504-0a18-427c-8213-5f3818864a9a.png">
 
 ## False Positives
-If you use egress SSL decryption + inspection this script may trigger false positives (as your IDS may before lookups on the canary token.. thus triggering it).
+If you use egress SSL decryption + inspection this script may trigger false positives (as your IDS may perform lookups on the canary token.. thus triggering it).
 
 If this is the case then you are better off running it from a cloud instance that is not being inspected.
 
